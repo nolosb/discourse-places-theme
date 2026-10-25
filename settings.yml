@@ -1,2 +1,38 @@
-example_setting:
-  default: true
+# The banner above the top menu lists. An entry scoped to a page applies on
+# that page; the entry without a page everywhere else. With no unscoped entry
+# the banner only shows on the scoped pages.
+top_menu_banners:
+  type: objects
+  default:
+    - title: "Welcome! 👋"
+      description: "Pull up a chair, share what you're into and say hi to someone new."
+  schema:
+    name: banner
+    identifier: title
+    properties:
+      page:
+        type: enum
+        choices:
+          - latest
+          - new
+          - unread
+          - unseen
+          - top
+          - hot
+          - posted
+          - bookmarks
+          - read
+      title:
+        type: string
+        required: true
+        validations:
+          min_length: 1
+          max_length: 100
+      description:
+        type: string
+        validations:
+          max_length: 300
+      image:
+        type: upload
+      image_dark:
+        type: upload

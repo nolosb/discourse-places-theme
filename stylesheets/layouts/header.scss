@@ -1,0 +1,40 @@
+// The search field starts at the main column's edge and stops at a set
+// width. The first column mirrors the main grid (core + the Full width
+// component): the main column is centered at --d-max-width, or starts after
+// the sidebar and core's content gap, whichever is further in. Percentages
+// resolve against the header's content box, which is narrower than the page
+// by --d-header-padding-x on each side; that inset cancels out in the
+// centered term. The component's own areas stay, so its outlets keep their
+// cells.
+@include viewport.from(md) {
+  .d-header > .wrap .contents {
+    grid-template-areas: "logo extra-info . panel";
+    grid-template-columns:
+      minmax(max-content, calc((100% - var(--d-max-width)) / 2))
+      minmax(0, var(--t-GoPlaces-search-size-max-inline))
+      1fr
+      auto;
+
+    .has-sidebar-page & {
+      // core narrows the gap below lg on the main wrapper only
+      @include viewport.until(lg) {
+        --d-main-content-gap: var(--space-4);
+      }
+      grid-template-columns:
+        max(
+          calc(
+            var(--d-sidebar-width) +
+              var(--d-main-content-gap) - var(--d-header-padding-x)
+          ),
+          calc((100% - var(--d-max-width)) / 2)
+        )
+        minmax(0, var(--t-GoPlaces-search-size-max-inline))
+        1fr
+        auto;
+    }
+  }
+
+  .d-header .extra-info-wrapper {
+    max-width: var(--t-GoPlaces-search-size-max-inline);
+  }
+}

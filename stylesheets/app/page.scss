@@ -1,0 +1,14 @@
+html {
+  background: var(--t-GoPlaces-color-background-sunken);
+}
+
+// Category background images show in the category banner instead; core
+// sets them on body.category-<slug> from an inline stylesheet
+html body[class*="category-"] {
+  background-image: none;
+}
+
+// FAQ page
+.body-page {
+  max-width: var(--d-max-width);
+}

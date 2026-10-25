@@ -1,0 +1,29 @@
+:root {
+  --d-sidebar-background: var(--secondary);
+  --d-sidebar-footer-fade: var(--secondary);
+  --d-sidebar-border-color: transparent;
+}
+
+// From md the sidebar floats as a panel, inset from the page edges and kept
+// inside its grid column, so the gap to the main column stays and the header
+// search still lines up with it. Below md it's core's slide-out drawer.
+@include viewport.from(md) {
+  body.has-sidebar-page #main-outlet-wrapper .sidebar-wrapper {
+    box-sizing: border-box;
+    width: calc(
+      var(--d-sidebar-width) - var(--t-GoPlaces-sidebar-space-margin)
+    );
+    top: calc(
+      var(--main-outlet-offset) + var(--t-GoPlaces-sidebar-space-margin)
+    );
+    height: calc(
+      var(--composer-vh, 1dvh) * 100 - var(--main-outlet-offset, 0px) - 2 *
+        var(--t-GoPlaces-sidebar-space-margin)
+    );
+    margin-block: var(--t-GoPlaces-sidebar-space-margin);
+    margin-inline-start: var(--t-GoPlaces-sidebar-space-margin);
+    border: 1px solid var(--t-GoPlaces-color-border-default);
+    border-radius: var(--t-GoPlaces-border-radius-lg);
+    box-shadow: var(--t-GoPlaces-shadow-raised);
+  }
+}

@@ -1,5 +1,26 @@
-# Fun Feeds
+# Go Places
 
-**Theme Summary**
+An upbeat, colorful community theme for Discourse: soft pastel colors, round shapes and banners above the topic lists.
 
-For more information, please see: **url to meta topic**
+These theme components install with it:
+
+| Component | Adds |
+| --- | --- |
+| [Full width](https://github.com/discourse/discourse-full-width-component) | Full-width page and header layout |
+| [List Styles](https://github.com/discourse/discourse-list-styles) | Card and thumbnail topic lists, picked by each user |
+| [Discovery Sidebar](https://github.com/discourse/discourse-discovery-sidebar) | Space, topic and resource panels next to the topic lists |
+
+## Banners
+
+A banner sits above the navigation in the topic list's column, at one fixed height so the page doesn't jump between banners.
+
+- **Top menu banner:** replaces core's welcome banner on the top menu pages. Each entry in `top_menu_banners` has a title, description, image and dark image. The entry without a page shows everywhere; an entry with a page picked replaces it on that page. No search field: the header search sits right above it.
+- **Category banner:** on category pages, the category's name, description and logo on a wash of its color. The category's background image shows at the banner's end instead of behind the page.
+
+## Layout
+
+The search field in the header starts at the main column's edge, up to 24rem wide. The page widens by the discovery sidebar's width while a panel renders. The top menu has no Categories tab, whatever the `top_menu` site setting lists; the `/categories` page still works. Topic lists have no Views column.
+
+## Credits
+
+Illustrations: [Fluent Emoji](https://github.com/microsoft/fluentui-emoji) by Microsoft (MIT)

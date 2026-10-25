@@ -1,0 +1,26 @@
+@mixin panel {
+  box-sizing: border-box;
+  background-color: var(--secondary);
+  border: 1px solid var(--t-GoPlaces-color-border-default);
+  border-radius: var(--t-GoPlaces-border-radius-lg);
+  box-shadow: var(--t-GoPlaces-shadow-raised);
+  padding: var(--space-6);
+}
+
+// Category badge as a soft pill tinted from the category color
+@mixin category-badge {
+  background-color: light-dark(
+    oklch(from var(--category-badge-color) 95% calc(c * 0.25) h),
+    oklch(from var(--category-badge-color) 28% calc(c * 0.3) h)
+  );
+  padding: var(--space-half) var(--space-2);
+  border-radius: 999px;
+
+  .badge-category {
+    color: var(--primary-high);
+
+    &__name {
+      overflow: visible;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.list-controls {
+  background: transparent;
+  margin-block-end: var(--space-4);
+
+  .navigation-container {
+    margin-bottom: 0;
+  }
+
+  // the category and tag dropdowns repeat what the discovery sidebar shows
+  .category-breadcrumb {
+    display: none;
+  }
+}
+
+// Top menu tabs as pills; the current one takes the accent tint
+#navigation-bar {
+  gap: var(--space-1);
+
+  li a {
+    border-radius: 999px;
+    padding-inline: var(--space-4);
+  }
+
+  li.active a {
+    background: var(--t-GoPlaces-color-background-accent-subtle);
+    color: var(--t-GoPlaces-color-text-accent);
+  }
+
+  // hovered tabs preview the pill in the neutral fill
+  li a:not(.active):hover {
+    background: var(--t-GoPlaces-color-background-neutral);
+  }
+
+  // the pill marks the current and hovered tab; core's underline would
+  // repeat it
+  li a.active::after,
+  li a:hover::after {
+    display: none;
+  }
+}

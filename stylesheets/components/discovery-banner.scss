@@ -1,0 +1,112 @@
+// Shared by the category and top menu banners: one fixed height so the
+// navigation below doesn't jump between pages. The color drives the wash and
+// the bubble; categories pass their own, the top menu banner keeps the accent.
+.discovery-banner {
+  --discovery-banner-color: var(--tertiary);
+  box-sizing: border-box;
+  height: var(--t-GoPlaces-banner-size-block);
+  padding: var(--space-6) var(--space-8);
+  border-radius: var(--t-GoPlaces-border-radius-lg);
+  box-shadow: var(--t-GoPlaces-shadow-raised);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-block-end: var(--space-4);
+  overflow: hidden;
+
+  // same tint recipe as the category badges, a step stronger
+  background-color: light-dark(
+    oklch(from var(--discovery-banner-color) 93% calc(c * 0.35) h),
+    oklch(from var(--discovery-banner-color) 30% calc(c * 0.4) h)
+  );
+
+  // a big soft bubble in the banner color for a bit of play
+  &::after {
+    content: "";
+    position: absolute;
+    inset-block-start: -40%;
+    inset-inline-end: -8%;
+    width: 22rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: oklch(from var(--discovery-banner-color) l c h / 0.18);
+    pointer-events: none;
+  }
+
+  // the image takes the banner's end, inside its padding, whole and
+  // uncropped; sized by its own box so the rounded corners sit on the image
+  &__image {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 0 40%;
+    min-height: 0;
+    margin-inline-start: auto;
+
+    picture {
+      display: contents;
+    }
+
+    img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: var(--t-GoPlaces-border-radius-md);
+    }
+  }
+
+  &.--has-image::after {
+    display: none;
+  }
+
+  &__logo {
+    position: relative;
+    flex: 0 0 auto;
+    width: 6rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__text {
+    position: relative;
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-up-4);
+    line-height: var(--line-height-small);
+    color: var(--primary);
+  }
+
+  &__description {
+    margin: 0;
+    max-width: 40rem;
+    color: var(--primary-high);
+
+    @include line-clamp(3);
+  }
+
+  @include viewport.until(sm) {
+    padding: var(--space-4) var(--space-5);
+
+    &__logo {
+      width: 4rem;
+    }
+
+    &__title {
+      font-size: var(--font-up-2);
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+// The discovery sidebar comes from the Discovery Sidebar component; pages
+// with a panel get its width on top of the page width so the list keeps
+// its size. Set on :root so the header's search column follows the wider
+// main column too.
+:root:has(.discovery-layout .block-panel) {
+  --d-max-width: calc(
+    var(--t-GoPlaces-size-inline) + var(--tc-DiscoverySidebar-size-inline) +
+      var(--tc-DiscoverySidebar-space-gap-inline)
+  );
+}
+
+// Panel order: spaces, local tips (resources), leaderboard, topics, events.
+// The component's layout file sets its own order and an outlet takes only one
+// layout, so the theme reorders the panel groups in their flex column.
+.sidebar-discovery__block-container {
+  &--space {
+    order: 1;
+  }
+
+  &--resources {
+    order: 2;
+  }
+
+  &--leaderboard {
+    order: 3;
+  }
+
+  &--topics {
+    order: 4;
+  }
+
+  &--events {
+    order: 5;
+  }
+}

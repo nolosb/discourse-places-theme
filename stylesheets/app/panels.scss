@@ -1,0 +1,36 @@
+// Common views
+.users-directory,
+.navigation-categories #list-area,
+.contents.body-page,
+.container .user-main,
+.container.tags-index,
+.container.badges,
+.container.show-badge,
+.group-index .container.group,
+.groups-index,
+.private_message,
+.archetype-regular #main-outlet > .regular,
+.reviewable-container,
+div.edit-category,
+.search-container {
+  @include panel;
+}
+
+// Topic lists — no panel when discourse-list-styles renders cards, they draw
+// their own surfaces on the page background
+.navigation-topics,
+.navigation-category,
+.tags-page {
+  .list-container:not(:has(.topic-list.--grid-cards)) {
+    @include panel;
+    margin-block-end: var(--space-6);
+    padding: var(--space-4);
+
+    --d-topic-list-data-padding-inline-start: 0;
+    --d-topic-list-data-padding-inline-end: 0;
+
+    #list-area {
+      margin-bottom: 0;
+    }
+  }
+}

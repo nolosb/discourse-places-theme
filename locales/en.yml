@@ -1,6 +1,21 @@
 en:
   theme_metadata:
-    description: A friendly, colorful community theme with a hero banner, card topic
-      lists and a discovery sidebar.
+    description: "An upbeat, colorful community theme"
     settings:
-      example_setting: A description of a setting.
+      top_menu_banners:
+        description: "The banner above the topic lists on the top menu pages, in place of core's welcome banner. Pick a page to give it its own banner; an entry without a page shows everywhere else."
+        schema:
+          properties:
+            page:
+              label: "Page"
+              description: "The top menu page this banner is for. Leave empty to show it on every page without its own banner."
+            title:
+              label: "Title"
+            description:
+              label: "Description"
+            image:
+              label: "Image"
+              description: "Shown whole at the banner's end, up to 40% of its width and the banner's inner height."
+            image_dark:
+              label: "Dark image"
+              description: "Optional image for dark mode."

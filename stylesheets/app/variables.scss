@@ -1,0 +1,46 @@
+:root {
+  // Rounded everywhere: controls and chips, panels, pills
+  --t-GoPlaces-border-radius-md: 0.75rem;
+  --t-GoPlaces-border-radius-lg: 1.25rem;
+  --d-border-radius: var(--t-GoPlaces-border-radius-md);
+  --d-border-radius-large: var(--t-GoPlaces-border-radius-lg);
+  --d-button-border-radius: 999px;
+  --d-input-border-radius: var(--t-GoPlaces-border-radius-md);
+  --d-tag-border-radius: 999px;
+
+  // A gentle lift on hover for cards and buttons
+  --t-GoPlaces-motion-transition: transform 0.2s
+    cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  // Page width without the discovery sidebar; core reads it as its max width
+  --t-GoPlaces-size-inline: 1000px;
+  --d-max-width: var(--t-GoPlaces-size-inline);
+
+  // Welcome and category banners share one height, so the navigation below
+  // them doesn't jump between pages
+  --t-GoPlaces-banner-size-block: 15rem;
+
+  // Inset of the floating left sidebar from the page edges
+  --t-GoPlaces-sidebar-space-margin: var(--space-4);
+
+  // Header: the widest the search field gets (layouts/header.scss)
+  --t-GoPlaces-search-size-max-inline: 24rem;
+
+  // Discovery Sidebar component
+  --tc-DiscoverySidebar-size-inline: 18rem;
+  --tc-DiscoverySidebar-space-gap-inline: var(--space-6);
+  --tc-DiscoverySidebar-space-gap-block: var(--space-4);
+  --tc-DiscoverySidebar-BlockPanel-color-background: var(--secondary);
+  --tc-DiscoverySidebar-BlockPanel-color-border: var(
+    --t-GoPlaces-color-border-default
+  );
+  --tc-DiscoverySidebar-BlockPanel-border-radius: var(
+    --t-GoPlaces-border-radius-lg
+  );
+  --tc-DiscoverySidebar-BlockPanel-color-text-accent: var(
+    --t-GoPlaces-color-text-accent
+  );
+  --tc-DiscoverySidebar-BlockPanel-row-color-background-hovered: var(
+    --t-GoPlaces-color-background-neutral
+  );
+}
