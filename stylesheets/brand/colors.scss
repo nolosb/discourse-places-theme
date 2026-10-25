@@ -9,7 +9,7 @@
     oklch(from var(--tertiary) 19.3% calc(c * 0.17) h)
   );
 
-  // search field, tags, hovered tabs
+  // search field, tags, hovered tabs, the left sidebar
   --t-GoPlaces-color-background-neutral: light-dark(
     oklch(from var(--tertiary) 95.3% calc(c * 0.11) h),
     oklch(from var(--tertiary) 28.3% calc(c * 0.32) h)

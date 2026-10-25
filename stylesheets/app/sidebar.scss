@@ -2,28 +2,61 @@
   --d-sidebar-background: var(--secondary);
   --d-sidebar-footer-fade: var(--secondary);
   --d-sidebar-border-color: transparent;
+
+  // rows sized and inset like the space block's in the discovery sidebar:
+  // its 2rem content height plus padding on both sides
+  --d-sidebar-row-height: calc(2rem + 2 * var(--space-1));
+  --d-sidebar-row-horizontal-padding: var(--space-2);
+
+  // hovered and current links take the accent tint, like the top menu pills
+  --d-sidebar-highlight-background: var(
+    --t-GoPlaces-color-background-accent-subtle
+  );
+  --d-sidebar-highlight-color: var(--t-GoPlaces-color-text-accent);
+  --d-sidebar-active-background: var(
+    --t-GoPlaces-color-background-accent-subtle
+  );
+  --d-sidebar-active-color: var(--t-GoPlaces-color-text-accent);
+  --d-sidebar-active-icon-color: var(--t-GoPlaces-color-text-accent);
 }
 
-// From md the sidebar floats as a panel, inset from the page edges and kept
-// inside its grid column, so the gap to the main column stays and the header
-// search still lines up with it. Below md it's core's slide-out drawer.
+// The current link's text and icon take the accent, like the top menu's
+// current pill. Set on the link: the modernize-foundation upcoming change
+// resets --d-sidebar-active-color on body.
+.sidebar-section-link-wrapper .sidebar-section-link {
+  // round like the space block's rows; core uses its small fixed radius
+  border-radius: var(--d-border-radius);
+
+  &--active,
+  &.active,
+  &.exact-url-match {
+    color: var(--t-GoPlaces-color-text-accent);
+
+    .sidebar-section-link-prefix.icon,
+    .sidebar-section-link-content-badge {
+      color: var(--t-GoPlaces-color-text-accent);
+    }
+  }
+}
+
+// Hovered links take the accent through --d-sidebar-highlight-color; core
+// leaves their icon in the muted link icon color
+.sidebar-section-link-wrapper {
+  .sidebar-section-link:hover,
+  .sidebar-section-link:focus-visible,
+  &.--hovering .sidebar-section-link {
+    .sidebar-section-link-prefix.icon {
+      color: var(--t-GoPlaces-color-text-accent);
+    }
+  }
+}
+
+// From md the sidebar is a plain column in the search field's fill: no
+// panel, no border. Below md it's core's slide-out drawer, which keeps its
+// background.
 @include viewport.from(md) {
-  body.has-sidebar-page #main-outlet-wrapper .sidebar-wrapper {
-    box-sizing: border-box;
-    width: calc(
-      var(--d-sidebar-width) - var(--t-GoPlaces-sidebar-space-margin)
-    );
-    top: calc(
-      var(--main-outlet-offset) + var(--t-GoPlaces-sidebar-space-margin)
-    );
-    height: calc(
-      var(--composer-vh, 1dvh) * 100 - var(--main-outlet-offset, 0px) - 2 *
-        var(--t-GoPlaces-sidebar-space-margin)
-    );
-    margin-block: var(--t-GoPlaces-sidebar-space-margin);
-    margin-inline-start: var(--t-GoPlaces-sidebar-space-margin);
-    border: 1px solid var(--t-GoPlaces-color-border-default);
-    border-radius: var(--t-GoPlaces-border-radius-lg);
-    box-shadow: var(--t-GoPlaces-shadow-raised);
+  :root {
+    --d-sidebar-background: var(--t-GoPlaces-color-background-neutral);
+    --d-sidebar-footer-fade: var(--t-GoPlaces-color-background-neutral);
   }
 }

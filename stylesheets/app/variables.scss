@@ -20,8 +20,12 @@
   // them doesn't jump between pages
   --t-GoPlaces-banner-size-block: 15rem;
 
-  // Inset of the floating left sidebar from the page edges
-  --t-GoPlaces-sidebar-space-margin: var(--space-4);
+  // Core's hover surface takes the accent tint. The modernize-foundation
+  // upcoming change sets the sidebar's active background to it on body,
+  // where the sidebar.scss override can't reach.
+  --token-color-surface-hovered: var(
+    --t-GoPlaces-color-background-accent-subtle
+  );
 
   // Header: the widest the search field gets (layouts/header.scss)
   --t-GoPlaces-search-size-max-inline: 24rem;
