@@ -2,7 +2,7 @@ html {
   background: var(--t-GoPlaces-color-background-sunken);
 }
 
-// Category background images show in the category banner instead; core
+// Category background images aren't used; the banner shows the logo. Core
 // sets them on body.category-<slug> from an inline stylesheet
 html body[class*="category-"] {
   background-image: none;

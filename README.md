@@ -15,7 +15,7 @@ These theme components install with it:
 A banner sits above the navigation in the topic list's column, at one fixed height so the page doesn't jump between banners.
 
 - **Top menu banner:** replaces core's welcome banner on the top menu pages. Each entry in `top_menu_banners` has a title, description, image and dark image. The entry without a page shows everywhere; an entry with a page picked replaces it on that page. No search field: the header search sits right above it.
-- **Category banner:** on category pages, the category's name, description and logo on a wash of its color. The category's background image shows at the banner's end instead of behind the page.
+- **Category banner:** on category pages, the category's name and description on a wash of its color, with its logo at the banner's end. Category background images aren't shown.
 
 ## Layout
 

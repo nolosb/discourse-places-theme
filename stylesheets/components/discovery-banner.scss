@@ -63,17 +63,6 @@
     display: none;
   }
 
-  &__logo {
-    position: relative;
-    flex: 0 0 auto;
-    width: 6rem;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-
   &__text {
     position: relative;
     min-width: 0;
@@ -96,10 +85,6 @@
 
   @include viewport.until(sm) {
     padding: var(--space-4) var(--space-5);
-
-    &__logo {
-      width: 4rem;
-    }
 
     &__title {
       font-size: var(--font-up-2);

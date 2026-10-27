@@ -12,6 +12,21 @@
   }
 }
 
+// Core's category heading shows the logo, badge and description once a logo
+// is uploaded; the category banner shows them instead. Its outlet stays, laid
+// out as without a logo.
+.category-heading.--has-logo {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  .category-heading__logo,
+  .category-heading__content {
+    display: none;
+  }
+}
+
 // Top menu tabs as pills; the current one takes the accent tint
 #navigation-bar {
   gap: var(--space-1);

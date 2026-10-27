@@ -2,14 +2,12 @@ import DLightDarkImg from "discourse/ui-kit/d-light-dark-img";
 import dConcatClass from "discourse/ui-kit/helpers/d-concat-class";
 
 // Title and description on a wash of the banner color, with an optional
-// light/dark image whole at the end. The block renders before the text (a
-// category logo).
+// light/dark image whole at the end.
 const DiscoveryBanner = <template>
   <section
     class={{dConcatClass "discovery-banner" (if @lightImage.url "--has-image")}}
     ...attributes
   >
-    {{yield}}
     <div class="discovery-banner__text">
       <h1 class="discovery-banner__title">{{@title}}</h1>
       {{#if @description}}
