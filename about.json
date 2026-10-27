@@ -14,35 +14,5 @@
     "https://github.com/discourse/discourse-discovery-sidebar"
   ],
   "assets": {},
-  "modifiers": {},
-  "color_schemes": {
-    "Go Places Light": {
-      "primary": "2b2540",
-      "secondary": "ffffff",
-      "tertiary": "7c5cff",
-      "quaternary": "ff7ab6",
-      "header_background": "ffffff",
-      "header_primary": "2b2540",
-      "highlight": "ffe7a3",
-      "selected": "ece6ff",
-      "hover": "f3efff",
-      "danger": "e5486a",
-      "success": "21a87a",
-      "love": "ff5c8a"
-    },
-    "Go Places Dark": {
-      "primary": "efeaff",
-      "secondary": "1f1b2e",
-      "tertiary": "a693ff",
-      "quaternary": "ff9ccc",
-      "header_background": "1f1b2e",
-      "header_primary": "efeaff",
-      "highlight": "6b5a1f",
-      "selected": "2e2747",
-      "hover": "2a2540",
-      "danger": "ff6b85",
-      "success": "4fd1a5",
-      "love": "ff7aa0"
-    }
-  }
+  "modifiers": {}
 }
