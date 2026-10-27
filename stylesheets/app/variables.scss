@@ -48,3 +48,10 @@
     --t-GoPlaces-color-background-neutral
   );
 }
+
+// Left sidebar width. The main-outlet-grid-layout upcoming change sets its own
+// width on body, so its class takes the same value.
+:root,
+.uc-enable-main-outlet-grid-layout-change {
+  --d-sidebar-width: 17em;
+}
