@@ -15,7 +15,10 @@
   "assets": {
     "party_popper": "assets/illustrations/party_popper.png",
     "sparkles": "assets/illustrations/sparkles.png",
-    "fire": "assets/illustrations/fire.png"
+    "fire": "assets/illustrations/fire.png",
+    "blue_book": "assets/illustrations/blue_book.png",
+    "thought_balloon": "assets/illustrations/thought_balloon.png",
+    "shield": "assets/illustrations/shield.png"
   },
   "modifiers": {}
 }
