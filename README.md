@@ -1,4 +1,4 @@
-# Go Places
+# Places
 
 An upbeat, colorful community theme for Discourse: soft pastel colors, round shapes and banners above the topic lists.
 

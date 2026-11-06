@@ -11,7 +11,7 @@
     grid-template-areas: "logo extra-info . panel";
     grid-template-columns:
       minmax(max-content, calc((100% - var(--d-max-width)) / 2))
-      minmax(0, var(--t-GoPlaces-search-size-max-inline))
+      minmax(0, var(--t-Places-search-size-max-inline))
       1fr
       auto;
 
@@ -28,13 +28,13 @@
           ),
           calc((100% - var(--d-max-width)) / 2)
         )
-        minmax(0, var(--t-GoPlaces-search-size-max-inline))
+        minmax(0, var(--t-Places-search-size-max-inline))
         1fr
         auto;
     }
   }
 
   .d-header .extra-info-wrapper {
-    max-width: var(--t-GoPlaces-search-size-max-inline);
+    max-width: var(--t-Places-search-size-max-inline);
   }
 }

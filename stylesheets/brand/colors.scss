@@ -4,28 +4,28 @@
 // tertiary recolors the whole theme.
 :root {
   // the page
-  --t-GoPlaces-color-background-sunken: light-dark(
+  --t-Places-color-background-sunken: light-dark(
     oklch(from var(--tertiary) 97.3% calc(c * 0.06) h),
     oklch(from var(--tertiary) 19.3% calc(c * 0.17) h)
   );
 
   // search field, tags, hovered tabs, the left sidebar
-  --t-GoPlaces-color-background-neutral: light-dark(
+  --t-Places-color-background-neutral: light-dark(
     oklch(from var(--tertiary) 95.3% calc(c * 0.11) h),
     oklch(from var(--tertiary) 28.3% calc(c * 0.32) h)
   );
 
   // the current tab's pill
-  --t-GoPlaces-color-background-accent-subtle: light-dark(
+  --t-Places-color-background-accent-subtle: light-dark(
     oklch(from var(--tertiary) 93.7% calc(c * 0.15) h),
     oklch(from var(--tertiary) 29.7% calc(c * 0.37) h)
   );
-  --t-GoPlaces-color-border-default: light-dark(
+  --t-Places-color-border-default: light-dark(
     oklch(from var(--tertiary) 91.6% calc(c * 0.19) h),
     oklch(from var(--tertiary) 32.2% calc(c * 0.39) h)
   );
-  --t-GoPlaces-color-text-accent: var(--tertiary);
-  --t-GoPlaces-shadow-raised: 0 4px 16px
+  --t-Places-color-text-accent: var(--tertiary);
+  --t-Places-shadow-raised: 0 4px 16px
     light-dark(
       oklch(from var(--tertiary) l c h / 0.1),
       oklch(from var(--tertiary) 10% calc(c * 0.3) h / 0.4)

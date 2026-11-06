@@ -10,14 +10,12 @@
 
   // hovered and current links take the accent tint, like the top menu pills
   --d-sidebar-highlight-background: var(
-    --t-GoPlaces-color-background-accent-subtle
+    --t-Places-color-background-accent-subtle
   );
-  --d-sidebar-highlight-color: var(--t-GoPlaces-color-text-accent);
-  --d-sidebar-active-background: var(
-    --t-GoPlaces-color-background-accent-subtle
-  );
-  --d-sidebar-active-color: var(--t-GoPlaces-color-text-accent);
-  --d-sidebar-active-icon-color: var(--t-GoPlaces-color-text-accent);
+  --d-sidebar-highlight-color: var(--t-Places-color-text-accent);
+  --d-sidebar-active-background: var(--t-Places-color-background-accent-subtle);
+  --d-sidebar-active-color: var(--t-Places-color-text-accent);
+  --d-sidebar-active-icon-color: var(--t-Places-color-text-accent);
 }
 
 // The current link's text and icon take the accent, like the top menu's
@@ -30,11 +28,11 @@
   &--active,
   &.active,
   &.exact-url-match {
-    color: var(--t-GoPlaces-color-text-accent);
+    color: var(--t-Places-color-text-accent);
 
     .sidebar-section-link-prefix.icon,
     .sidebar-section-link-content-badge {
-      color: var(--t-GoPlaces-color-text-accent);
+      color: var(--t-Places-color-text-accent);
     }
   }
 }
@@ -46,7 +44,7 @@
   .sidebar-section-link:focus-visible,
   &.--hovering .sidebar-section-link {
     .sidebar-section-link-prefix.icon {
-      color: var(--t-GoPlaces-color-text-accent);
+      color: var(--t-Places-color-text-accent);
     }
   }
 }
@@ -56,7 +54,7 @@
 // background.
 @include viewport.from(md) {
   :root {
-    --d-sidebar-background: var(--t-GoPlaces-color-background-neutral);
-    --d-sidebar-footer-fade: var(--t-GoPlaces-color-background-neutral);
+    --d-sidebar-background: var(--t-Places-color-background-neutral);
+    --d-sidebar-footer-fade: var(--t-Places-color-background-neutral);
   }
 }

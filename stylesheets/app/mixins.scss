@@ -1,9 +1,9 @@
 @mixin panel {
   box-sizing: border-box;
   background-color: var(--secondary);
-  border: 1px solid var(--t-GoPlaces-color-border-default);
-  border-radius: var(--t-GoPlaces-border-radius-lg);
-  box-shadow: var(--t-GoPlaces-shadow-raised);
+  border: 1px solid var(--t-Places-color-border-default);
+  border-radius: var(--t-Places-border-radius-lg);
+  box-shadow: var(--t-Places-shadow-raised);
   padding: var(--space-6);
 }
 

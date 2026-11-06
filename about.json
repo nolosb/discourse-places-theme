@@ -1,9 +1,9 @@
 {
-  "name": "Go Places",
+  "name": "Places",
   "component": false,
   "authors": "nolosb",
-  "about_url": "https://github.com/nolosb/discourse-go-places-theme",
-  "license_url": "https://github.com/nolosb/discourse-go-places-theme/blob/main/LICENSE",
+  "about_url": "https://github.com/nolosb/discourse-places-theme",
+  "license_url": "https://github.com/nolosb/discourse-places-theme/blob/main/LICENSE",
   "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966",
   "theme_version": "0.0.1",
   "minimum_discourse_version": "2026.10.0-latest",

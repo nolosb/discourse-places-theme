@@ -4,7 +4,7 @@
 // main column too.
 :root:has(.discovery-layout .block-panel) {
   --d-max-width: calc(
-    var(--t-GoPlaces-size-inline) + var(--tc-DiscoverySidebar-size-inline) +
+    var(--t-Places-size-inline) + var(--tc-DiscoverySidebar-size-inline) +
       var(--tc-DiscoverySidebar-space-gap-inline)
   );
 }

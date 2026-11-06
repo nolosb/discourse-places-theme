@@ -1,30 +1,28 @@
 :root {
   // Rounded everywhere: controls and chips, panels, pills
-  --t-GoPlaces-border-radius-md: 0.75rem;
-  --t-GoPlaces-border-radius-lg: 1.25rem;
-  --d-border-radius: var(--t-GoPlaces-border-radius-md);
-  --d-border-radius-large: var(--t-GoPlaces-border-radius-lg);
+  --t-Places-border-radius-md: 0.75rem;
+  --t-Places-border-radius-lg: 1.25rem;
+  --d-border-radius: var(--t-Places-border-radius-md);
+  --d-border-radius-large: var(--t-Places-border-radius-lg);
   --d-button-border-radius: 999px;
-  --d-input-border-radius: var(--t-GoPlaces-border-radius-md);
+  --d-input-border-radius: var(--t-Places-border-radius-md);
   --d-tag-border-radius: 999px;
 
   // Page width without the discovery sidebar; core reads it as its max width
-  --t-GoPlaces-size-inline: 1000px;
-  --d-max-width: var(--t-GoPlaces-size-inline);
+  --t-Places-size-inline: 1000px;
+  --d-max-width: var(--t-Places-size-inline);
 
   // Welcome and category banners share one height, so the navigation below
   // them doesn't jump between pages
-  --t-GoPlaces-banner-size-block: 15rem;
+  --t-Places-banner-size-block: 15rem;
 
   // Core's hover surface takes the accent tint. The modernize-foundation
   // upcoming change sets the sidebar's active background to it on body,
   // where the sidebar.scss override can't reach.
-  --token-color-surface-hovered: var(
-    --t-GoPlaces-color-background-accent-subtle
-  );
+  --token-color-surface-hovered: var(--t-Places-color-background-accent-subtle);
 
   // Header: the widest the search field gets (layouts/header.scss)
-  --t-GoPlaces-search-size-max-inline: 24rem;
+  --t-Places-search-size-max-inline: 24rem;
 
   // Discovery Sidebar component
   --tc-DiscoverySidebar-size-inline: 18rem;
@@ -32,16 +30,16 @@
   --tc-DiscoverySidebar-space-gap-block: var(--space-4);
   --tc-DiscoverySidebar-BlockPanel-color-background: var(--secondary);
   --tc-DiscoverySidebar-BlockPanel-color-border: var(
-    --t-GoPlaces-color-border-default
+    --t-Places-color-border-default
   );
   --tc-DiscoverySidebar-BlockPanel-border-radius: var(
-    --t-GoPlaces-border-radius-lg
+    --t-Places-border-radius-lg
   );
   --tc-DiscoverySidebar-BlockPanel-color-text-accent: var(
-    --t-GoPlaces-color-text-accent
+    --t-Places-color-text-accent
   );
   --tc-DiscoverySidebar-BlockPanel-row-color-background-hovered: var(
-    --t-GoPlaces-color-background-neutral
+    --t-Places-color-background-neutral
   );
 }
 
