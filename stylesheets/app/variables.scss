@@ -8,7 +8,7 @@
   --d-input-border-radius: var(--t-Places-border-radius-md);
   --d-tag-border-radius: 999px;
 
-  // Page width without the discovery sidebar; core reads it as its max width
+  // Page width without the sidebar panels; core reads it as its max width
   --t-Places-size-inline: 1000px;
   --d-max-width: var(--t-Places-size-inline);
 
@@ -24,23 +24,21 @@
   // Header: the widest the search field gets (layouts/header.scss)
   --t-Places-search-size-max-inline: 24rem;
 
-  // Discovery Sidebar component
-  --tc-DiscoverySidebar-size-inline: 18rem;
-  --tc-DiscoverySidebar-space-gap-inline: var(--space-6);
-  --tc-DiscoverySidebar-space-gap-block: var(--space-4);
-  --tc-DiscoverySidebar-BlockPanel-color-background: var(--secondary);
-  --tc-DiscoverySidebar-BlockPanel-color-border: var(
-    --t-Places-color-border-default
-  );
-  --tc-DiscoverySidebar-BlockPanel-border-radius: var(
-    --t-Places-border-radius-lg
-  );
-  --tc-DiscoverySidebar-BlockPanel-color-text-accent: var(
-    --t-Places-color-text-accent
-  );
-  --tc-DiscoverySidebar-BlockPanel-row-color-background-hovered: var(
-    --t-Places-color-background-neutral
-  );
+  // The panels next to the topic lists (layouts/sidebar-discovery.scss)
+  --t-Places-aside-size-inline: 18rem;
+  --t-Places-aside-space-gap-inline: var(--space-6);
+  --t-Places-aside-space-gap-block: var(--space-4);
+
+  // Sidebar panels (components/block-panel.scss). Type sizes in rem: core's
+  // --font-* scale is em-based and compounds when nested, so panels never use
+  // it. The body size is the floor: nothing in a panel renders smaller than
+  // core's topic list meta data.
+  --t-Places-BlockPanel-border-width: 1px;
+  --t-Places-BlockPanel-border-radius: var(--t-Places-border-radius-lg);
+  --t-Places-BlockPanel-space-padding: var(--space-4);
+  --t-Places-BlockPanel-title-font-size: 1rem;
+  --t-Places-BlockPanel-font-size: 0.875rem;
+  --t-Places-CategoryMark-size-icon: 1.25rem;
 }
 
 // Left sidebar width. The main-outlet-grid-layout upcoming change sets its own

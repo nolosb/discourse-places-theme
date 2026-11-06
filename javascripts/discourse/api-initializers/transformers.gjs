@@ -1,7 +1,7 @@
 import { apiInitializer } from "discourse/lib/api";
 
 export default apiInitializer((api) => {
-  // No Categories tab: the sidebar and the Discovery Sidebar lead to the
+  // No Categories tab: the sidebar and the place panel lead to the
   // categories instead. The /categories page itself still works.
   api.registerValueTransformer("navigation-items", ({ value }) =>
     value.filter((item) => item.name !== "categories")

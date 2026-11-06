@@ -30,4 +30,15 @@
       oklch(from var(--tertiary) l c h / 0.1),
       oklch(from var(--tertiary) 10% calc(c * 0.3) h / 0.4)
     );
+
+  // sidebar panels
+  --t-Places-BlockPanel-color-background: var(--secondary);
+  --t-Places-BlockPanel-color-border: var(--t-Places-color-border-default);
+  --t-Places-BlockPanel-color-text-default: var(--primary);
+  --t-Places-BlockPanel-color-text-muted: var(--primary-medium);
+  --t-Places-BlockPanel-color-icon-muted: var(--primary-medium);
+  --t-Places-BlockPanel-color-text-accent: var(--t-Places-color-text-accent);
+  --t-Places-BlockPanel-row-color-background-hovered: var(
+    --t-Places-color-background-neutral
+  );
 }

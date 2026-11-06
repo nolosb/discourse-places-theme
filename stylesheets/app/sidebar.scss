@@ -3,7 +3,7 @@
   --d-sidebar-footer-fade: var(--secondary);
   --d-sidebar-border-color: transparent;
 
-  // rows sized and inset like the space block's in the discovery sidebar:
+  // rows sized and inset like the place block's in the sidebar panels:
   // its 2rem content height plus padding on both sides
   --d-sidebar-row-height: calc(2rem + 2 * var(--space-1));
   --d-sidebar-row-horizontal-padding: var(--space-2);
@@ -22,7 +22,7 @@
 // current pill. Set on the link: the modernize-foundation upcoming change
 // resets --d-sidebar-active-color on body.
 .sidebar-section-link-wrapper .sidebar-section-link {
-  // round like the space block's rows; core uses its small fixed radius
+  // round like the place block's rows; core uses its small fixed radius
   border-radius: var(--d-border-radius);
 
   &--active,

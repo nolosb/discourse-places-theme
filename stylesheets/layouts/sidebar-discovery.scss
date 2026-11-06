@@ -1,35 +1,105 @@
-// The discovery sidebar comes from the Discovery Sidebar component; pages
-// with a panel get its width on top of the page width so the list keeps
-// its size. Set on :root so the header's search column follows the wider
-// main column too.
+// Core wraps discovery pages in .discovery-layout whenever a layout is
+// registered for the sidebar-discovery outlet, and ships no styles for it.
+// Markup: .discovery-layout > [__category-header, __above-navigation,
+// __navigation, __content > [__list, __sidebar, plugin outlets]].
+//
+// Everything only applies while a panel is actually rendered, so pages
+// without matching panels keep the stock full-width list.
+//
+// Breakpoints follow the space the page gets, not the viewport, so an open
+// sidebar counts. The layout renders straight into #main-outlet, the nearest
+// element that can be the container.
+#main-outlet:has(> .discovery-layout .block-panel) {
+  container-type: inline-size;
+  container-name: discovery-page;
+}
+
+// Pages with a panel get its width on top of the page width so the list keeps
+// its size. Set on :root so the header's search column follows the wider main
+// column too.
 :root:has(.discovery-layout .block-panel) {
   --d-max-width: calc(
-    var(--t-Places-size-inline) + var(--tc-DiscoverySidebar-size-inline) +
-      var(--tc-DiscoverySidebar-space-gap-inline)
+    var(--t-Places-size-inline) + var(--t-Places-aside-size-inline) +
+      var(--t-Places-aside-space-gap-inline)
   );
 }
 
-// Panel order: spaces, local tips (resources), events, leaderboard, topics.
-// The component's layout file sets its own order and an outlet takes only one
-// layout, so the theme reorders the panel groups in their flex column.
-.sidebar-discovery__block-container {
-  &--space {
-    order: 1;
+.discovery-layout:has(.block-panel) {
+  @include container.from(lg, discovery-page) {
+    // The outer wrapper is the grid; header, navigation, list and plugin
+    // outlets all join column one and the sidebar spans every row.
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1fr)
+      var(--t-Places-aside-size-inline);
+
+    // the trailing 1fr row absorbs leftover height when the sidebar is taller
+    // than the list, instead of opening gaps between the rows above. Every
+    // plugin outlet connector is a row of its own, so leave plenty: unused
+    // auto rows collapse to nothing.
+    grid-template-rows: repeat(20, auto) 1fr;
+    column-gap: var(--t-Places-aside-space-gap-inline);
+
+    > * {
+      grid-column: 1;
+    }
+
+    .discovery-layout__content {
+      display: contents;
+
+      > * {
+        grid-column: 1;
+      }
+    }
+
+    .discovery-layout__sidebar {
+      grid-column: 2;
+      grid-row: 1 / -1;
+    }
   }
 
-  &--resources {
-    order: 2;
+  // Single column: the sidebar moves above everything else and only panels
+  // flagged for mobile stay visible.
+  @include container.until(lg, discovery-page) {
+    display: flex;
+    flex-direction: column;
+
+    .discovery-layout__content {
+      display: contents;
+    }
+
+    .discovery-layout__sidebar {
+      order: -1;
+      margin-block-end: var(--space-4);
+
+      .block-panel:not(.--mobile) {
+        display: none;
+      }
+
+      &:not(:has(.block-panel.--mobile)) {
+        display: none;
+      }
+    }
+  }
+}
+
+.sidebar-discovery {
+  // the outlet, any group, and each block wrapper stack their children with
+  // the same gap: a block with several instances renders them all inside
+  // one wrapper, so the wrapper needs the gap too
+  &__layout,
+  &__block-container,
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--t-Places-aside-space-gap-block);
   }
 
-  &--events {
-    order: 3;
-  }
-
-  &--leaderboard {
-    order: 4;
-  }
-
-  &--topics {
-    order: 5;
+  // core keeps a wrapper per block, and a container wrapper per head or
+  // group, even when nothing inside renders a panel (no matching instance,
+  // or a block hiding itself); an empty flex item would still take a gap
+  &__block:not(:has(.block-panel)),
+  &__block-container:not(:has(.block-panel)) {
+    display: none;
   }
 }

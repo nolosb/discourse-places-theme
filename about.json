@@ -9,13 +9,14 @@
   "minimum_discourse_version": "2026.10.0-latest",
   "maximum_discourse_version": null,
   "components": [
-    "https://github.com/discourse/discourse-full-width-component",
-    "https://github.com/discourse/discourse-discovery-sidebar"
+    "https://github.com/discourse/discourse-full-width-component"
   ],
   "assets": {
     "party_popper": "assets/illustrations/party_popper.png",
     "sparkles": "assets/illustrations/sparkles.png",
     "fire": "assets/illustrations/fire.png"
   },
-  "modifiers": {}
+  "modifiers": {
+    "svg_icons": ["compass", "lightbulb", "heart"]
+  }
 }

@@ -42,3 +42,95 @@ top_menu_banners:
         type: upload
       image_dark:
         type: upload
+
+# Where the Places panel appears and where its "All places" link goes. An entry
+# scoped to categories applies on those categories and their subcategories;
+# the unscoped entry everywhere else. With no unscoped entry the panel only
+# shows on the scoped categories.
+places_panel:
+  type: objects
+  default:
+    - all_places_url: "/"
+  schema:
+    name: place
+    identifier: categories
+    properties:
+      categories:
+        type: categories
+      all_places_url:
+        type: enum
+        default: "/"
+        choices:
+          - "/"
+          - "/latest"
+          - "/categories"
+
+# Which links the Resources panel lists. An entry scoped to categories applies
+# on those categories and their subcategories; an unscoped entry everywhere else.
+resources_panel:
+  type: objects
+  default:
+    - links:
+        - label: "Community guidelines"
+          url: "/guidelines"
+          icon: "circle-check"
+          description: "How we treat each other here"
+        - label: "Badges"
+          url: "/badges"
+          icon: "certificate"
+          description: "What you can earn by taking part"
+        - label: "About this site"
+          url: "/about"
+          icon: "circle-info"
+          description: "Key stats and how to get in touch"
+  schema:
+    name: resources
+    identifier: categories
+    properties:
+      categories:
+        type: categories
+      links:
+        type: objects
+        schema:
+          name: link
+          identifier: label
+          properties:
+            label:
+              type: string
+              required: true
+            url:
+              type: string
+              required: true
+            icon:
+              type: icon
+            description:
+              type: string
+
+# Which topics the Topics panel lists for a place. An entry scoped to
+# categories applies on those categories and their subcategories; the unscoped
+# entry everywhere else. The order sorts the list; a tag narrows it to topics
+# carrying it.
+topics_panel:
+  type: objects
+  default:
+    - order: likes
+  schema:
+    name: topic_list
+    identifier: categories
+    properties:
+      categories:
+        type: categories
+      order:
+        type: enum
+        default: likes
+        choices:
+          - hot
+          - activity
+          - created
+          - likes
+          - views
+          - posts
+      tag:
+        type: tags
+        validations:
+          max: 1

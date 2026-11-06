@@ -1,0 +1,83 @@
+.block-place {
+  // Panel header
+  &__intro {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--space-1);
+    min-width: 0;
+  }
+
+  &__head {
+    @include block-panel-row;
+
+    .block-place__name {
+      font-size: var(--t-Places-BlockPanel-title-font-size);
+      font-weight: 600;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
+    }
+  }
+
+  // same style as a resource description
+  &__description {
+    margin: 0;
+    color: var(--t-Places-BlockPanel-color-text-muted);
+    font-size: var(--t-Places-BlockPanel-font-size);
+    line-height: var(--line-height-medium);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    @include block-panel-row;
+    @include block-panel-row-hover;
+  }
+
+  &__name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__count {
+    color: var(--t-Places-BlockPanel-color-text-muted);
+    white-space: nowrap;
+  }
+
+  &__link:hover .block-place__name,
+  &__link:focus-visible .block-place__name,
+  &__head:hover .block-place__name,
+  &__head:focus-visible .block-place__name {
+    color: var(--t-Places-BlockPanel-color-text-accent);
+  }
+
+  .--current &__link {
+    font-weight: 700;
+
+    .block-place__name {
+      color: var(--t-Places-BlockPanel-color-text-accent);
+    }
+  }
+
+  // on the place's own pages the name takes the accent and the description
+  // firms up with it
+  &__intro.--current {
+    .block-place__name {
+      color: var(--t-Places-BlockPanel-color-text-accent);
+    }
+
+    .block-place__description {
+      font-weight: 600;
+    }
+  }
+}

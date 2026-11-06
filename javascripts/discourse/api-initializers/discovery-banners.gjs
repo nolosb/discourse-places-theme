@@ -4,7 +4,7 @@ import CategoryBanner from "../components/category-banner.gjs";
 import TopMenuBanner from "../components/top-menu-banner.gjs";
 
 // Above the navigation, inside the discovery layout, so the banners take the
-// list's column and the Discovery Sidebar keeps its place beside them.
+// list's column and the sidebar panels keep their place beside them.
 // Category pages show the category banner, the other discovery pages the top
 // menu banner from top_menu_banners, in place of core's welcome banner, which
 // is hidden everywhere. Tag pages show neither.
