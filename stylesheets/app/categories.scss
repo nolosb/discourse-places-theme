@@ -1,0 +1,13 @@
+// Category cards on the categories page: core's colored accent on the left
+// gives way to the same neutral edge on every side
+.category-boxes,
+.category-boxes-with-topics {
+  .category-box {
+    border-left-width: 0;
+  }
+
+  .category-box-inner {
+    border-left-width: var(--d-category-border-box-width);
+    border-radius: var(--d-border-radius);
+  }
+}
