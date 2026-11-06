@@ -10,7 +10,6 @@
   "maximum_discourse_version": null,
   "components": [
     "https://github.com/discourse/discourse-full-width-component",
-    "https://github.com/discourse/discourse-list-styles",
     "https://github.com/discourse/discourse-discovery-sidebar"
   ],
   "assets": {},

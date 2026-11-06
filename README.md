@@ -7,7 +7,6 @@ These theme components install with it:
 | Component | Adds |
 | --- | --- |
 | [Full width](https://github.com/discourse/discourse-full-width-component) | Full-width page and header layout |
-| [List Styles](https://github.com/discourse/discourse-list-styles) | Card and thumbnail topic lists, picked by each user |
 | [Discovery Sidebar](https://github.com/discourse/discourse-discovery-sidebar) | Space, topic and resource panels next to the topic lists |
 
 ## Banners

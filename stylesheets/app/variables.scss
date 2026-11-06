@@ -8,10 +8,6 @@
   --d-input-border-radius: var(--t-GoPlaces-border-radius-md);
   --d-tag-border-radius: 999px;
 
-  // A gentle lift on hover for cards and buttons
-  --t-GoPlaces-motion-transition: transform 0.2s
-    cubic-bezier(0.34, 1.56, 0.64, 1);
-
   // Page width without the discovery sidebar; core reads it as its max width
   --t-GoPlaces-size-inline: 1000px;
   --d-max-width: var(--t-GoPlaces-size-inline);

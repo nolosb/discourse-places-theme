@@ -16,12 +16,11 @@ div.edit-category,
   @include panel;
 }
 
-// Topic lists — no panel when discourse-list-styles renders cards, they draw
-// their own surfaces on the page background
+// Topic lists
 .navigation-topics,
 .navigation-category,
 .tags-page {
-  .list-container:not(:has(.topic-list.--grid-cards)) {
+  .list-container {
     @include panel;
     margin-block-end: var(--space-6);
     padding: var(--space-4);
