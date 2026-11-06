@@ -12,6 +12,9 @@ top_menu_banners:
     - page: hot
       title: "Trending now"
       description: "What everyone's talking about right now."
+    - page: categories
+      title: "Explore places"
+      description: "Look around, pick a place and see what's going on there."
   schema:
     name: banner
     identifier: title
@@ -28,6 +31,7 @@ top_menu_banners:
           - posted
           - bookmarks
           - read
+          - categories
       title:
         type: string
         required: true

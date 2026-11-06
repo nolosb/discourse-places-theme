@@ -7,6 +7,7 @@ const DEFAULT_IMAGES = {
   latest: "party_popper",
   new: "sparkles",
   hot: "fire",
+  categories: "compass",
 };
 
 // The banner for the current top menu page: the entry scoped to it, else the

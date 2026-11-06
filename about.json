@@ -14,7 +14,8 @@
   "assets": {
     "party_popper": "assets/illustrations/party_popper.png",
     "sparkles": "assets/illustrations/sparkles.png",
-    "fire": "assets/illustrations/fire.png"
+    "fire": "assets/illustrations/fire.png",
+    "compass": "assets/illustrations/compass.png"
   },
   "modifiers": {
     "svg_icons": ["compass", "lightbulb", "heart"]
