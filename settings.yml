@@ -102,13 +102,13 @@ resources_panel:
             label:
               type: string
               required: true
-            url:
-              type: string
-              required: true
             icon:
               type: icon
             description:
               type: string
+            url:
+              type: string
+              required: true
 
 # Which users the Users panel lists for a place. An entry scoped to
 # categories applies on those categories and their subcategories; the unscoped
