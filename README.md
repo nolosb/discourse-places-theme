@@ -1,6 +1,6 @@
 # Places
 
-An upbeat, colorful community theme for Discourse: soft pastel colors, round shapes and banners above the topic lists.
+A playful theme that adds banners and a handy sidebar to topic lists.
 
 These theme components install with it:
 

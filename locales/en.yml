@@ -1,6 +1,6 @@
 en:
   theme_metadata:
-    description: "An upbeat, colorful community theme"
+    description: "A playful theme that adds banners and a handy sidebar to topic lists."
     settings:
       top_menu_banners:
         description: "The banner above the topic lists on the top menu pages, in place of core's welcome banner. Pick a page to give it its own banner; an entry without a page shows everywhere else."
