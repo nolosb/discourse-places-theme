@@ -45,6 +45,15 @@
     }
   }
 
+  // a category emoji (SVG) stands in for a missing logo; Twemoji fill their
+  // whole viewBox and their flat shapes read heavier than the 3D Fluent
+  // illustrations, so the emoji takes the same box and shrinks well inside it
+  &.--emoji &__image img {
+    height: 100%;
+    scale: 0.75;
+    border-radius: 0;
+  }
+
   &__text {
     position: relative;
     min-width: 0;
