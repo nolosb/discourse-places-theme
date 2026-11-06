@@ -6,6 +6,12 @@ top_menu_banners:
   default:
     - title: "Welcome! 👋"
       description: "Pull up a chair, share what you're into and say hi to someone new."
+    - page: new
+      title: "Fresh in"
+      description: "The newest topics since you last dropped by."
+    - page: hot
+      title: "Trending now"
+      description: "What everyone's talking about right now."
   schema:
     name: banner
     identifier: title

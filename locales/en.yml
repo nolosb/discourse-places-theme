@@ -15,7 +15,7 @@ en:
               label: "Description"
             image:
               label: "Image"
-              description: "Shown whole at the banner's end, up to 40% of its width and the banner's inner height."
+              description: "Shown whole at the banner's end, up to 40% of its width and the banner's inner height. Without one, Latest, New and Hot show a built-in illustration."
             image_dark:
               label: "Dark image"
               description: "Optional image for dark mode."

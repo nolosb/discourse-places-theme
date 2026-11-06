@@ -1,6 +1,6 @@
 // Shared by the category and top menu banners: one fixed height so the
-// navigation below doesn't jump between pages. The color drives the wash and
-// the bubble; categories pass their own, the top menu banner keeps the accent.
+// navigation below doesn't jump between pages. The color drives the wash;
+// categories pass their own, the top menu banner keeps the accent.
 .discovery-banner {
   --discovery-banner-color: var(--tertiary);
   box-sizing: border-box;
@@ -20,19 +20,6 @@
     oklch(from var(--discovery-banner-color) 93% calc(c * 0.35) h),
     oklch(from var(--discovery-banner-color) 30% calc(c * 0.4) h)
   );
-
-  // a big soft bubble in the banner color for a bit of play
-  &::after {
-    content: "";
-    position: absolute;
-    inset-block-start: -40%;
-    inset-inline-end: -8%;
-    width: 22rem;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: oklch(from var(--discovery-banner-color) l c h / 0.18);
-    pointer-events: none;
-  }
 
   // the image takes the banner's end, inside its padding, whole and
   // uncropped; sized by its own box so the rounded corners sit on the image
@@ -57,10 +44,6 @@
       max-height: 100%;
       border-radius: var(--t-GoPlaces-border-radius-md);
     }
-  }
-
-  &.--has-image::after {
-    display: none;
   }
 
   &__text {
