@@ -9,7 +9,7 @@
   );
 }
 
-// Panel order: spaces, local tips (resources), leaderboard, topics, events.
+// Panel order: spaces, local tips (resources), events, leaderboard, topics.
 // The component's layout file sets its own order and an outlet takes only one
 // layout, so the theme reorders the panel groups in their flex column.
 .sidebar-discovery__block-container {
@@ -21,15 +21,15 @@
     order: 2;
   }
 
-  &--leaderboard {
+  &--events {
     order: 3;
   }
 
-  &--topics {
+  &--leaderboard {
     order: 4;
   }
 
-  &--events {
+  &--topics {
     order: 5;
   }
 }
