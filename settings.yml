@@ -5,7 +5,7 @@ top_menu_banners:
   type: objects
   default:
     - title: "Welcome! 👋"
-      description: "Pull up a chair, share what you're into and say hi to someone new."
+      description: "Good to see you! Join a conversation and meet new people."
     - page: new
       title: "Fresh in"
       description: "The newest topics since you last dropped by."
