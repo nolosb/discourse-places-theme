@@ -3,9 +3,9 @@ import DSkeleton from "discourse/ui-kit/d-skeleton";
 
 // Loading placeholder for a panel body. The shape follows core's
 // BlockSkeletonShape (variant, count, width, height) so it can move into a
-// block's `data.skeleton` declaration later. `rows: "topic"` is a theme
-// extension for composed rows that plain DSkeleton cannot express: a title
-// line over a meta line, `count` times.
+// block's `data.skeleton` declaration later. `rows` is a theme extension for
+// composed rows that plain DSkeleton cannot express, `count` times:
+//   { rows: "user" }   avatar circle + name line + score
 export default class BlockPanelSkeleton extends Component {
   get rows() {
     const count = this.args.shape?.count ?? 5;
@@ -14,13 +14,12 @@ export default class BlockPanelSkeleton extends Component {
 
   <template>
     <div aria-hidden="true" class="block-panel-skeleton">
-      {{#if (eq @shape.rows "topic")}}
+      {{#if (eq @shape.rows "user")}}
         {{#each this.rows as |row|}}
-          <div class="block-panel-skeleton__row --topic" data-row={{row}}>
-            <div class="block-panel-skeleton__lines">
-              <DSkeleton @variant="text" @width="90%" />
-              <DSkeleton @variant="text" @width="40%" />
-            </div>
+          <div class="block-panel-skeleton__row --user" data-row={{row}}>
+            <DSkeleton @size="1.5rem" @variant="circle" />
+            <DSkeleton @variant="text" @width="55%" />
+            <DSkeleton @variant="text" @width="2.5rem" />
           </div>
         {{/each}}
       {{else}}

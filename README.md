@@ -21,7 +21,7 @@ Next to the topic lists on wide screens, top to bottom:
 
 - **Place:** the current top-level category with its subcategories, or every top-level category on global lists. `places_panel` sets where it shows and where its "All places" link goes.
 - **Good to know:** a list of links. `resources_panel` holds the links.
-- **Most loved:** the five most liked topics of the current place, or of the whole site on global lists. `topics_panel` sets the order and an optional tag.
+- **Users:** the top users of the user directory, five by default, by default "Most loved" (most likes received). `users_panel` sets the order, the period, an optional group and the number of users (up to 20); the title and icon follow the order. The directory counts site-wide, so categories only pick where an entry shows. The panel hides while the user directory is off.
 
 Each setting takes entries scoped to categories (they apply on those categories and their subcategories) and one entry without categories for everywhere else; leaving out the unscoped entry hides that panel outside the scoped categories. Panels don't show on small screens.
 

@@ -3,7 +3,7 @@ import BlockHead from "discourse/blocks/builtin/block-head";
 import { apiInitializer } from "discourse/lib/api";
 import BlockPlace from "../blocks/block-place.gjs";
 import BlockResources from "../blocks/block-resources.gjs";
-import BlockTopics from "../blocks/block-topics.gjs";
+import BlockUsers from "../blocks/block-users.gjs";
 import {
   categoryScope,
   defaultEntries,
@@ -12,7 +12,7 @@ import {
 } from "../lib/category-scoped-layout.js";
 
 // The panels next to the topic lists and the categories page, top to bottom:
-// places, resources, topics. Each block has the entries scoped to categories first and
+// places, resources, users. Each block has the entries scoped to categories first and
 // the unscoped entry last; BlockHead renders the first one that matches.
 export default apiInitializer((api) => {
   api.renderBlocks(
@@ -74,35 +74,42 @@ export default apiInitializer((api) => {
       },
       {
         block: BlockHead,
-        id: "topics",
+        id: "users",
         children: [
-          ...scopedEntries(settings.topics_panel).map((entry) => ({
-            block: BlockTopics,
-            args: {
-              title: "topics.title",
-              icon: "heart",
-              mobile: false,
-              count: 5,
-              showCategory: true,
-              order: entry.order,
-              tag: entry.tag?.[0],
-            },
+          ...scopedEntries(settings.users_panel).map((entry) => ({
+            block: BlockUsers,
+            args: usersArgs(entry),
             conditions: categoryScope(entry.categories),
           })),
-          ...defaultEntries(settings.topics_panel).map((entry) => ({
-            block: BlockTopics,
-            args: {
-              title: "topics.title",
-              icon: "heart",
-              mobile: false,
-              count: 5,
-              showCategory: true,
-              order: entry.order,
-              tag: entry.tag?.[0],
-            },
+          ...defaultEntries(settings.users_panel).map((entry) => ({
+            block: BlockUsers,
+            args: usersArgs(entry),
           })),
         ],
       },
     ])
   );
 });
+
+// The title and icon follow the order the list is ranked by
+const USER_ICONS = {
+  likes_received: "heart",
+  likes_given: "hand-holding-heart",
+  topic_count: "pen-to-square",
+  post_count: "comments",
+  topics_entered: "eye",
+  posts_read: "book-open",
+  days_visited: "calendar-check",
+};
+
+function usersArgs(entry) {
+  return {
+    title: `users.title.${entry.order}`,
+    icon: USER_ICONS[entry.order],
+    mobile: false,
+    count: entry.count,
+    order: entry.order,
+    period: entry.period,
+    groupId: entry.group?.[0],
+  };
+}

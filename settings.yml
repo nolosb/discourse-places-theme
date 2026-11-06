@@ -110,31 +110,50 @@ resources_panel:
             description:
               type: string
 
-# Which topics the Topics panel lists for a place. An entry scoped to
+# Which users the Users panel lists for a place. An entry scoped to
 # categories applies on those categories and their subcategories; the unscoped
-# entry everywhere else. The order sorts the list; a tag narrows it to topics
-# carrying it.
-topics_panel:
+# entry everywhere else. The list comes from the user directory, which counts
+# site-wide, so categories only pick where an entry shows.
+users_panel:
   type: objects
   default:
-    - order: likes
+    - order: likes_received
+      period: all
+      count: 5
   schema:
-    name: topic_list
+    name: user_list
     identifier: categories
     properties:
       categories:
         type: categories
       order:
         type: enum
-        default: likes
+        default: likes_received
         choices:
-          - hot
-          - activity
-          - created
-          - likes
-          - views
-          - posts
-      tag:
-        type: tags
+          - likes_received
+          - likes_given
+          - topic_count
+          - post_count
+          - topics_entered
+          - posts_read
+          - days_visited
+      count:
+        type: integer
+        default: 5
+        validations:
+          min: 1
+          max: 20
+      period:
+        type: enum
+        default: all
+        choices:
+          - all
+          - yearly
+          - quarterly
+          - monthly
+          - weekly
+          - daily
+      group:
+        type: groups
         validations:
           max: 1

@@ -47,18 +47,24 @@ en:
                     label: "Icon"
                   description:
                     label: "Description"
-      topics_panel:
-        description: "Which topics the Topics panel lists. Scope an entry to categories for a list per place; an entry without categories applies everywhere else."
+      users_panel:
+        description: "Which users the Users panel lists. The list comes from the user directory and counts activity across the whole site; scope an entry to categories to show a different list there. An entry without categories applies everywhere else."
         schema:
           properties:
             categories:
               label: "Categories"
             order:
               label: "Order"
-              description: "Topics of the current top-level category, or of the whole site on global lists. Hot and activity use the hot and latest lists; the others sort the latest list."
-            tag:
-              label: "Tag"
-              description: "Only topics with this tag."
+              description: "What the users are ranked by. The panel title follows it. The matching column must be enabled in the user directory."
+            period:
+              label: "Period"
+              description: "The time span the counts cover."
+            group:
+              label: "Group"
+              description: "Only members of this group."
+            count:
+              label: "Number of users"
+              description: "How many users the panel lists, up to 20."
   place:
     all_places: "Places"
     all_places_link: "All places"
@@ -68,9 +74,16 @@ en:
   panel:
     load_error: "Could not load this content. Please try again."
     retry: "Retry"
-  topics:
-    title: "Most loved"
-    empty: "No topics yet"
+  users:
+    title:
+      likes_received: "Most loved"
+      likes_given: "Most generous"
+      topic_count: "Top starters"
+      post_count: "Most active"
+      topics_entered: "Most curious"
+      posts_read: "Top readers"
+      days_visited: "Regulars"
+    empty: "No users yet"
     view_all: "View all"
   resources:
     title: "Good to know"
