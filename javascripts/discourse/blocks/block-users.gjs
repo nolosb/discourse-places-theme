@@ -36,10 +36,10 @@ export const USER_ORDERS = [
     title: { type: "string", required: true },
     icon: { type: "string" },
     mobile: { type: "boolean", default: false },
-    order: { type: "string", default: "likes_received", enum: USER_ORDERS },
+    order: { type: "string", required: true, enum: USER_ORDERS },
     period: {
       type: "string",
-      default: "all",
+      required: true,
       enum: ["all", "yearly", "quarterly", "monthly", "weekly", "daily"],
     },
     groupId: { type: "number", integer: true, min: 1 },

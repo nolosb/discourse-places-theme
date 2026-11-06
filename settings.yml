@@ -117,7 +117,7 @@ resources_panel:
 users_panel:
   type: objects
   default:
-    - order: likes_received
+    - order: posts_read
       period: all
       count: 5
   schema:
@@ -128,7 +128,7 @@ users_panel:
         type: categories
       order:
         type: enum
-        default: likes_received
+        default: posts_read
         choices:
           - likes_received
           - likes_given
