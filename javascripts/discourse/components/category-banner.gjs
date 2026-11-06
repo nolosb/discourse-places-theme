@@ -7,7 +7,7 @@ import DiscoveryBanner from "./discovery-banner.gjs";
 // Core's emoji images are 72px PNGs, too small for the banner; the default
 // set's SVGs scale sharply
 const TWEMOJI_SVG_URL =
-  "https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg";
+  "https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg";
 
 let unicodeByName;
 
