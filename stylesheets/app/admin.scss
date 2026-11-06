@@ -1,0 +1,5 @@
+// Long values (a full category list) would otherwise widen the fields column
+// past the admin panel
+.schema-setting-editor__fields {
+  min-width: 0;
+}

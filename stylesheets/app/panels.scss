@@ -12,7 +12,8 @@
 .archetype-regular #main-outlet > .regular,
 .reviewable-container,
 div.edit-category,
-.search-container {
+.search-container,
+.admin-content.boxed {
   @include panel;
 }
 
