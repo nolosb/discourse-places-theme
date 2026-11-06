@@ -23,7 +23,7 @@ Next to the topic lists on wide screens, top to bottom:
 - **Good to know:** a list of links. `resources_panel` holds the links.
 - **Most loved:** the five most liked topics of the current place, or of the whole site on global lists. `topics_panel` sets the order and an optional tag.
 
-Each setting takes entries scoped to categories (they apply on those categories and their subcategories) and one entry without categories for everywhere else; leaving out the unscoped entry hides that panel outside the scoped categories. Panels don't show on small screens or on the categories page.
+Each setting takes entries scoped to categories (they apply on those categories and their subcategories) and one entry without categories for everywhere else; leaving out the unscoped entry hides that panel outside the scoped categories. Panels don't show on small screens.
 
 ## Layout
 
