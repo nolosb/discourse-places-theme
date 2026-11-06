@@ -1,6 +1,5 @@
 // Shared by the category and top menu banners: one fixed height so the
-// navigation below doesn't jump between pages. The color drives the wash;
-// categories pass their own, the top menu banner keeps the accent.
+// navigation below doesn't jump between pages. The color drives the wash.
 .discovery-banner {
   --discovery-banner-color: var(--tertiary);
   box-sizing: border-box;
