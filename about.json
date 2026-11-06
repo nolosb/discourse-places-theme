@@ -18,6 +18,6 @@
     "compass": "assets/illustrations/compass.png"
   },
   "modifiers": {
-    "svg_icons": ["compass", "lightbulb", "heart"]
+    "svg_icons": ["compass", "signs-post", "heart"]
   }
 }

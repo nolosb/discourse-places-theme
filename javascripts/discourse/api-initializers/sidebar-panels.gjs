@@ -55,7 +55,7 @@ export default apiInitializer((api) => {
             block: BlockResources,
             args: {
               title: "resources.title",
-              icon: "lightbulb",
+              icon: "signs-post",
               mobile: false,
               links: entry.links,
             },
@@ -65,7 +65,7 @@ export default apiInitializer((api) => {
             block: BlockResources,
             args: {
               title: "resources.title",
-              icon: "lightbulb",
+              icon: "signs-post",
               mobile: false,
               links: entry.links,
             },
