@@ -7,11 +7,10 @@ import TopMenuBanner from "../components/top-menu-banner.gjs";
 // list's column and the sidebar panels keep their place beside them.
 // Category pages show the category banner, the other discovery pages the top
 // menu banner from top_menu_banners, in place of core's welcome banner, which
-// is hidden everywhere. Tag pages show neither.
+// the theme turns off (enable_welcome_banner in about.json). Tag pages show
+// neither.
 export default apiInitializer((api) => {
   const banners = settings.top_menu_banners;
-
-  api.registerValueTransformer("welcome-banner-display-for-route", () => false);
 
   api.renderInOutlet(
     "discovery-list-controls-above",
